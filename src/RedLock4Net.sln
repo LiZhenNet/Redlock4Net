@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedLock4Net", "RedLock4Net\RedLock4Net.csproj", "{098EBB31-589A-446B-895C-7961201920E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedLock4Net.Test", "RedLock4Net.Test\RedLock4Net.Test.csproj", "{9F8B3932-E674-47EE-932A-E60926F00FDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{098EBB31-589A-446B-895C-7961201920E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098EBB31-589A-446B-895C-7961201920E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098EBB31-589A-446B-895C-7961201920E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098EBB31-589A-446B-895C-7961201920E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8B3932-E674-47EE-932A-E60926F00FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8B3932-E674-47EE-932A-E60926F00FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8B3932-E674-47EE-932A-E60926F00FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8B3932-E674-47EE-932A-E60926F00FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
