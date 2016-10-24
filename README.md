@@ -5,7 +5,7 @@ See More：[Distributed locks with Redis](http://redis.io/topics/distlock)
 
 # Dependencies
 
-StackExchange.Redis[GitHub](https://github.com/StackExchange/StackExchange.Redis) [Nuget](https://www.nuget.org/packages/StackExchange.Redis/)
+StackExchange.Redis  [GitHub](https://github.com/StackExchange/StackExchange.Redis)  [Nuget](https://www.nuget.org/packages/StackExchange.Redis/)
 
 # Usage
 ```
