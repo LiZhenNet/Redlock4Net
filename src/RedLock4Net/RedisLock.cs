@@ -19,12 +19,14 @@ namespace RedLock4Net
         private readonly List<ConnectionMultiplexer> _redisConnections;
         private readonly int _redisDatabase;
         private readonly RedisKey _lockKey;
+        private readonly byte[] _lockValue;
         private readonly TimeSpan _expiryTime;
         public RedLock(IList<ConnectionMultiplexer> redisConnections, int redisDatabase, RedisKey lockKey, TimeSpan expiryTime)
         {
             _redisConnections = redisConnections.ToList();
             _redisDatabase = redisDatabase;
             _lockKey = lockKey;
+            _lockValue = Guid.NewGuid().ToByteArray();
             _expiryTime = expiryTime;
         }
 
@@ -57,7 +59,7 @@ namespace RedLock4Net
         {
             try
             {
-                return connection.GetDatabase(_redisDatabase).StringSet(_lockKey, "RedLock4Net", _expiryTime, When.NotExists);
+                return connection.GetDatabase(_redisDatabase).StringSet(_lockKey, _lockValue, _expiryTime, When.NotExists);
             }
             catch (Exception)
             {
@@ -79,10 +81,11 @@ namespace RedLock4Net
         private void Unlock()
         {
             RedisKey[] key = { _lockKey };
+            RedisValue[] values = { _lockValue };
+
             _redisConnections.ForEach(connection =>
             {
-                connection.GetDatabase(_redisDatabase).ScriptEvaluate(UnlockScript, key);
-
+                connection.GetDatabase(_redisDatabase).ScriptEvaluate(UnlockScript, key,values);
             });
         }
 
