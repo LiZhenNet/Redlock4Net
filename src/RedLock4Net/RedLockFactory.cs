@@ -13,7 +13,6 @@ namespace RedLock4Net
         private readonly int _configCheckSeconds;
         private readonly int _redisDatabase;
         private readonly IList<ConnectionMultiplexer> _redisConnections;
-        private ConnectionMultiplexer connection;
 
         public RedLockFactory(params ConnectionMultiplexer[] connection):this(100,10,0,connection)
         {
